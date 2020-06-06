@@ -16,8 +16,8 @@ tokenized = word_tokenize(cleaned)
 stemmer = PorterStemmer()
 stemmed = [stemmer.stem(token) for token in tokenized]
 
-lemmatizer = none
-lemmatized = []
+lemmatizer = WordNetLemmatizer()
+lemmatized = [lemmatizer.lemmatize(token, get_part_of_speech(token))
 for token in tokenized]
 
 print("Stemmed text:")
